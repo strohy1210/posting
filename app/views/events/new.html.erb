@@ -1,21 +1,20 @@
 <div class='container'>
-
-<h1> Post New Pulsd Event </h1>
-
-<p>
-  On Twitter, On Instagram, On Facebook
-<p>
-  At once
-        <%= simple_form_for(@event, class: "form-control") do |f| %>
-      
-          <%= f.input :title, input_html: { class: "form-control comment" } %>
-          
-            <%= f.input :date, input_html: { class: "form-control comment" } %>
-            <%= f.input :address, input_html: { class: "form-control comment" } %>
-            <%= f.input :description, input_html: { class: "form-control comment" } %><br>
-
-          <%= f.button :submit, class: "btn btn-default submit-comment form-control"%>
-
-        <%end%>
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %> error-top">
+      <%= value %>
+    </div>
+  <% end %>
+  <h2> Post a New Pulsd Event </h2>
+  <h4> On Twitter, On Instagram, and On Facebook All at Once</h4>
+<br>
+  <div class="event-form">
+    <%= simple_form_for(@event, class: "form-control") do |f| %>
+      <%= f.input :title, input_html: { class: "form-control" } %>
+      <%= f.input :date, input_html: { class: "form-control" } %>
+      <%= f.input :address, input_html: { class: "form-control" } %>
+      <%= f.input :description, input_html: { class: "form-control" } %><br>
+      <%= f.button :submit, class: "btn btn-default"%>
+    <%end%>
+  </div>
 
 </div>

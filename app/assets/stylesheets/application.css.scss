@@ -15,3 +15,27 @@
  */
 @import "bootstrap-sprockets";
 @import 'bootstrap';
+
+
+body { 
+  font-family: 'Karla', sans-serif;
+  font-size: 16px;
+  background: #ddd;
+  padding-top: 20px;
+
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+ }
+
+.container {
+  background-color: #eee;
+  border-radius: 20px;
+  padding: 30px;
+}

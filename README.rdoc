@@ -20,3 +20,32 @@ product_description, product_price etc.) in database as per requirement.
 ● Git repository is preferred method to submit project but not necessary.
 ● You may use any hosting, e.g. free tier on AWS etc, to host your project for demo if
 needed.
+
+add nice form
+add preview of posts for each platform after save, with option to edit/update
+
+twitter
+facebook - maybe need to oauth first?
+blog? - wordpress or tumblr?
+craigslist
+pinterest
+#hack form in instagram and 
+
+https://www.tumblr.com/docs/en/api/v2
+
+/post — Create a New Blog Post
+Method
+URI HTTP Method Authentication
+api.tumblr.com/v2/blog/{base-hostname}/post POST  OAuth
+Request Parameters
+These parameters are used for /post, /post/edit and /post/reblog methods.
+
+All Post Types
+Parameter Type  Description Default Required?
+type  String  The type of post to create. Specify one of the following:  text, photo, quote, link, chat, audio, video text  Yes
+state String  The state of the post. Specify one of the following:  published, draft, queue, private  published No
+tags  String  Comma-separated tags for this post  None  No
+tweet String  Manages the autotweet (if enabled) for this post: set to off for no tweet, or enter text to override the default tweet  None  No
+date  String  The GMT date and time of the post, as a string  The date and time of the POST request No
+format  String  Sets the format type of post. Supported formats are: html & markdown  html  No
+slug  String  Add a short text summary to the end of the post URL Dynamically generated if enabled on the blog  No

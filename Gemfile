@@ -17,6 +17,11 @@ gem 'figaro', '~> 1.0.0'
 gem 'simple_form'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'oauth', '~> 0.4.7'
+gem 'omniauth'
+gem 'omniauth-facebook', '~> 2.0.0'
+gem 'tumblr_client'
+# gem 'omniauth-tumblr'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 # gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -29,6 +34,8 @@ gem 'bootstrap-sass'
 gem 'whenever', :require => false
 # Use Unicorn as the app server
 # gem 'unicorn'
+gem "capybara"
+gem 'selenium-webdriver'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -37,7 +44,7 @@ gem 'pry-rails',  :group => :development
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-
+  gem 'cucumber-rails', :require => false
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 
