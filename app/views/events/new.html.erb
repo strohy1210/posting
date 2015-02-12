@@ -1,10 +1,21 @@
-<h1> Post New Event </h1>
+<div class='container'>
+
+<h1> Post New Pulsd Event </h1>
 
 <p>
-  On Twitter
-<p>
-  On instagram
-<p>
-  On Facebook
+  On Twitter, On Instagram, On Facebook
 <p>
   At once
+        <%= simple_form_for(@event, class: "form-control") do |f| %>
+      
+          <%= f.input :title, input_html: { class: "form-control comment" } %>
+          
+            <%= f.input :date, input_html: { class: "form-control comment" } %>
+            <%= f.input :address, input_html: { class: "form-control comment" } %>
+            <%= f.input :description, input_html: { class: "form-control comment" } %><br>
+
+          <%= f.button :submit, class: "btn btn-default submit-comment form-control"%>
+
+        <%end%>
+
+</div>
