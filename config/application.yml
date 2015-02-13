@@ -1,0 +1,21 @@
+# Add configuration values here, as shown below.
+#
+# pusher_app_id: "2954"
+# pusher_key: 7381a978f7dd7f9a1117
+# pusher_secret: abdc3b896a0ffb85d373
+# stripe_api_key: sk_test_2J0l093xOyW72XUYJHE4Dv2r
+# stripe_publishable_key: pk_test_ro9jV5SNwGb1yYlQfzG17LHK
+#
+# production:
+#   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
+#   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
+consumer_key: '31J20gBSZBB2HUAJDJ8SSAjK9'
+consumer_secret: 'ktGSKG8PfXw7dd7VoGIHUpO9Jwq66FBUVXgrxTxByNsw86sHJf'
+access_token: '536576228-E6h0ZfplZbodLKfryh4mbVMF5Y4HRo4gJJ9eQmg9'
+access_token_secret: 'HuI4TAT00Xk06jDh8zNtL8I2R91nl7QwJ6V1df588FW07'
+FACEBOOK_KEY: '1413820435582361'
+FACEBOOK_SECRET: 'a4276eff74233cb0fe9560677ce1aff6'
+tumblr_consumer_key: 'a66SVQ2I3wz9fzXWANskFqYsLMMEH2bbjJMp2wqZ945wmh5e0q'
+tumblr_consumer_secret: 'qaObwQjwUa4lQHsoiTIz7RS1rGAafCSXoBqLEW6kROdyKT2QFZ'
+tumblr_oauth_token: 'ccPKz2VhSD2IQBhyZPD2eWGQPc8ewzzbfTMN5ZIQ2O3Jj0oCW0'
+tumblr_oauth_token_secret: 'giPgQyRVnLk5jGwlToOQz2jz98Qjaqarzp8arQtYdgrONhxIFj'
