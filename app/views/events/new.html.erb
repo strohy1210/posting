@@ -1,23 +1,29 @@
 <div class='container'>
+
   <% flash.each do |key, value| %>
     <div class="alert alert-<%= key %> error-top">
       <%= value %>
     </div>
   <% end %>
+
   <h2> Post a New Pulsd Event </h2>
-  <h4> On Twitter, On Instagram, and On Facebook All at Once</h4>
-<br>
+  <h4> On Twitter, Craiglist, and On Facebook All at Once</h4>
+
+<p>
   <div class="event-form">
     <%= simple_form_for(@event, class: "form-control") do |f| %>
       <%= f.input :title, placeholder: "Awesome event", input_html: { class: "form-control" } %>
       <%= f.input :date, placeholder: "mm-dd-yyyy", input_html: { class: "form-control" } %>
-      <%= f.input :address, placeholder: "555 Broome St. New York, NY 10026", input_html: { class: "form-control" } %>
+      <%= f.input :address, placeholder: "333 Broome St. New York, NY 10002", input_html: { class: "form-control" } %>
       <%= f.input :description, placeholder: "awesome party", input_html: { class: "form-control" } %><br>
-      <%= f.input :duration, label: "length in days", placeholder: "15", input_html: { class: "form-control" } %><br>
+      <%= f.input :duration, label: "length in days", placeholder: "5", input_html: { class: "form-control" } %><br>
       <strong>Email</strong><br>
       <%= text_field_tag :email, "youremail@email.com", {class: "form-control"} %><br>
       <%= f.button :submit, class: "btn btn-default"%>
     <%end%>
   </div>
+
+ <p> 
+    <div class="fb-comments" data-href="https://www.facebook.com/pulsdnyc" data-numposts="5" data-colorscheme="light"></div>
 
 </div>
