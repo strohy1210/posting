@@ -3,6 +3,7 @@ class CapyClicker
   def self.craigslist(event, email)#(email, day, week, month),duration
     day = event.date.split("-").second
     month = event.date.split("-").first
+    zipcode =event.zipcode
     session = Capybara::Session.new(:selenium)
     session.visit "https://post.craigslist.org/k/2D9yDpuz5BGvDAgjylD_TA/Wcwzq?s=hood"
     session.execute_script("$('big').siblings().click()")
@@ -14,7 +15,7 @@ class CapyClicker
     session.find(".std select option[value='"+event.duration+"']").click
     session.fill_in 'PostingTitle', :with=> event.title
     session.fill_in 'GeographicArea', :with=> 'New York'
-    session.fill_in 'postal_code', :with=> event.zipcode
+    session.fill_in 'postal_code', :with=> zipcode
     session.fill_in 'PostingBody', :with=> event.description
     session.fill_in 'xstreet0', :with=> event.street
     session.fill_in 'city', :with=>'New York'

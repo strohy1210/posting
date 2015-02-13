@@ -4,9 +4,8 @@ class Event < ActiveRecord::Base
     results = Geocoder.search(self.address)
     result = results.first.data
     address = result["formatted_address"]
-    binding.pry
     zipcode = result["address_components"].last["long_name"]
-    zipcode = result["address_components"][result["address_components"].size -1]["long_name"] if zipcode.length < 5
+    zipcode = result["address_components"][(result["address_components"].size)-2]["long_name"] if zipcode.to_s.length < 5
     if result["types"][0] == "street_address"       
       street = result["address_components"][1]["long_name"]
     elsif result["types"].size === 3     
