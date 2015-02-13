@@ -6,6 +6,7 @@ class EventsController < ApplicationController
   def create
     Event.create(event_params)
     title = Event.last.title
+    EventPoster.post_events
     flash[:success] =  "event: "+title+' posted to all the medias!'
     redirect_to :back
   end
