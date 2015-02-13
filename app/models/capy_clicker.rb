@@ -1,20 +1,23 @@
 class CapyClicker
 
-  def self.craigslist#(email, day, week, month),duration
+  def self.craigslist(event, email)#(email, day, week, month),duration
+    day = event.date.split("-").second
+    month = event.date.split("-").first
     session = Capybara::Session.new(:selenium)
     session.visit "https://post.craigslist.org/k/2D9yDpuz5BGvDAgjylD_TA/Wcwzq?s=hood"
     session.execute_script("$('big').siblings().click()")
     session.fill_in 'FromEMail', :with=>'strohsm88@gmail.com'
-    session.fill_in 'ConfirmEMail', :with=>'strohsm88@gmail.com'
-    session.find(".start .label select option[value='4']").click #put dynamic number in for value
-    session.fill_in 'eventStartDay', :with=>8
-    session.find(".std select option[value='8']").click
-    session.fill_in 'PostingTitle', :with=>'event.title'
+    session.fill_in 'ConfirmEMail', :with=>'strohsm88@gmail.com' 
+    session.find(".start .label select option[value='"+month+"']").click
+    # session.select month, :from => 'eventStartMonth'#put dynamic number in for value
+    session.fill_in 'eventStartDay', :with=>day
+    session.find(".std select option[value='"+event.duration+"']").click
+    session.fill_in 'PostingTitle', :with=> event.title
     session.fill_in 'GeographicArea', :with=> 'New York'
-    session.fill_in 'postal_code', :with=>'10022'
-    session.fill_in 'PostingBody', :with=>'event.description'
-    session.fill_in 'xstreet0', :with=>'event.street'
-    session.fill_in 'city', :with=>'event.city'
+    session.fill_in 'postal_code', :with=> event.zipcode
+    session.fill_in 'PostingBody', :with=> event.description
+    session.fill_in 'xstreet0', :with=> event.street
+    session.fill_in 'city', :with=>'New York'
     session.fill_in 'region', :with=>"NY"
     session.find('.bigbutton').click
     session.find('.button').click

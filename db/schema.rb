@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150211232746) do
+ActiveRecord::Schema.define(version: 20150213164338) do
 
   create_table "events", force: true do |t|
     t.string   "title"
@@ -22,6 +22,10 @@ ActiveRecord::Schema.define(version: 20150211232746) do
     t.datetime "updated_at"
     t.boolean  "posted",      default: false
     t.text     "description"
+    t.text     "duration"
+    t.text     "zipcode"
+    t.text     "street"
+    t.text     "city"
   end
 
 end

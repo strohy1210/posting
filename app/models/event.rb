@@ -1,24 +1,20 @@
 class Event < ActiveRecord::Base
 
-  def initialize(query, x, t)
-    @query = query
-    @max_price = x
-    @max_time = t
-    result = Geocoder.search(@query)
-
-    @latitude= result.first.data["geometry"]["location"]["lat"]
-    @longitude= result.first.data["geometry"]["location"]["lng"]
-    @address = result.first.data["formatted_address"]
-    if result.first.data["types"][0] == "street_address"
-       @address_num = result.first.data["address_components"][0]["long_name"]
-       @road = result.first.data["address_components"][1]["long_name"].gsub("Street", "st").downcase.split.join("%20")
-    elsif result.first.data["types"].size === 3
-      @address_num =result.first.data["address_components"][1]["long_name"]
-      @road = result.first.data["address_components"][2]["long_name"].gsub("Street", "st").downcase.split.join("%20")
-    else
-      @address_num = result.first.data["address_components"][2]["long_name"]
-      @road = result.first.data["address_components"][3]["long_name"].gsub("Street", "st").downcase.split.join("%20")
+  def get_location_details
+    results = Geocoder.search(self.address)
+    result = results.first.data
+    address = result["formatted_address"]
+    binding.pry
+    zipcode = result["address_components"].last["long_name"]
+    zipcode = result["address_components"][result["address_components"].size -1]["long_name"] if zipcode.length < 5
+    if result["types"][0] == "street_address"       
+      street = result["address_components"][1]["long_name"]
+    elsif result["types"].size === 3     
+      street = result["address_components"][2]["long_name"]
+    else      
+      street = result["address_components"][3]["long_name"]
     end
+    self.update(address: address, zipcode: zipcode, street: street)
   end
-  
+
 end
