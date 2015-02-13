@@ -36,7 +36,7 @@ gem 'whenever', :require => false
 # gem 'unicorn'
 gem "capybara"
 gem 'selenium-webdriver'
-
+gem "geocoder"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'pry-rails',  :group => :development

@@ -9,8 +9,8 @@
 <br>
   <div class="event-form">
     <%= simple_form_for(@event, class: "form-control") do |f| %>
-      <%= f.input :title, input_html: { class: "form-control" } %>
-      <%= f.input :date, input_html: { class: "form-control" } %>
+      <%= f.input :title, placeholder: "Awesome event", input_html: { class: "form-control" } %>
+      <%= f.input :date, placeholder: "mm-dd-yyyy", input_html: { class: "form-control" } %>
       <%= f.input :address, input_html: { class: "form-control" } %>
       <%= f.input :description, input_html: { class: "form-control" } %><br>
       <%= f.button :submit, class: "btn btn-default"%>
